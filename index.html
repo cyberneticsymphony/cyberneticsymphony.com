@@ -1,0 +1,18 @@
+---
+layout: default
+---
+{% for post in site.posts %}
+<article class="post">
+<h2 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+<p class="post-date">{{ post.date | date: "%B %-d, %Y" }}</p>
+{% assign text = post.content | strip_html | normalize_whitespace %}
+{% if text.size <= site.preview_limit %}
+{{ post.content }}
+{% else %}
+<p>{{ text | truncate: site.preview_chars }}</p>
+<p class="read-more"><a href="{{ post.url | relative_url }}">Read more →</a></p>
+{% endif %}
+</article>
+{% else %}
+<p class="empty">No posts yet.</p>
+{% endfor %}

@@ -1,0 +1,16 @@
+title: Cybernetic Symphony
+description: personal writings
+permalink: /posts/:title/
+
+# The 500-character threshold for showing a full post vs. a preview.
+preview_limit: 500
+preview_chars: 400
+
+# Top menu. Add { label: about, url: /about/ } entries as needed.
+nav:
+  - label: home
+    url: /
+
+# Speeds up builds; we only need Markdown + Liquid.
+kramdown:
+  input: GFM
